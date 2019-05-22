@@ -56,7 +56,25 @@
 					"secureInput": false
 				},
 				"typeProperties": {
-					"notebookPath": "/dataengineering with databricks/1 Datafactory ETL"
+					"notebookPath": "/dataengineering with databricks/1 Datafactory ETL",
+					"baseParameters": {
+						"input": {
+							"value": "@pipeline().parameters.inputPath",
+							"type": "Expression"
+						},
+						"output": {
+							"value": "@pipeline().parameters.outputPath",
+							"type": "Expression"
+						},
+						"filename": {
+							"value": "@pipeline().parameters.fileName",
+							"type": "Expression"
+						},
+						"pipelineRunId": {
+							"value": "@pipeline().RunId",
+							"type": "Expression"
+						}
+					}
 				},
 				"linkedServiceName": {
 					"referenceName": "AzureDatabricks1",
