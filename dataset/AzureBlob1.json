@@ -6,28 +6,6 @@
 			"type": "LinkedServiceReference"
 		},
 		"type": "AzureBlob",
-		"structure": [
-			{
-				"name": "AIRPORT_ID",
-				"type": "String"
-			},
-			{
-				"name": "AIRPORT",
-				"type": "String"
-			},
-			{
-				"name": "DISPLAY_AIRPORT_NAME",
-				"type": "String"
-			},
-			{
-				"name": "LATITUDE",
-				"type": "String"
-			},
-			{
-				"name": "LONGITUDE",
-				"type": "String"
-			}
-		],
 		"typeProperties": {
 			"format": {
 				"type": "TextFormat",
