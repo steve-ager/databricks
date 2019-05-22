@@ -4,7 +4,6 @@
 		"activities": [
 			{
 				"name": "S3 to Blob",
-				"description": "AWS S3 to blob copy",
 				"type": "Copy",
 				"policy": {
 					"timeout": "7.00:00:00",
@@ -14,8 +13,37 @@
 					"secureInput": false
 				},
 				"typeProperties": {
-					"enableStaging": false
-				}
+					"source": {
+						"type": "FileSystemSource",
+						"recursive": true
+					},
+					"sink": {
+						"type": "BlobSink"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"columnMappings": {
+							"AIRPORT_ID": "AIRPORT_ID",
+							"AIRPORT": "AIRPORT",
+							"DISPLAY_AIRPORT_NAME": "DISPLAY_AIRPORT_NAME",
+							"LATITUDE": "LATITUDE",
+							"LONGITUDE": "LONGITUDE"
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "S3",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "AzureBlob1",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		]
 	}
