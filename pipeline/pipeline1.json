@@ -73,7 +73,7 @@
 				"type": "string",
 				"defaultValue": "/processed_sink"
 			},
-			"filename": {
+			"fileName": {
 				"type": "string",
 				"defaultValue": "Product.csv"
 			}
