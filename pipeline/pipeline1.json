@@ -48,6 +48,14 @@
 			{
 				"name": "Notebook1",
 				"type": "DatabricksNotebook",
+				"dependsOn": [
+					{
+						"activity": "S3 to Blob",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
