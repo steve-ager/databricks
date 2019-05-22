@@ -20,7 +20,17 @@
 					"sink": {
 						"type": "BlobSink"
 					},
-					"enableStaging": false
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"columnMappings": {
+							"AIRPORT_ID": "AIRPORT_ID",
+							"AIRPORT": "AIRPORT",
+							"DISPLAY_AIRPORT_NAME": "DISPLAY_AIRPORT_NAME",
+							"LATITUDE": "LATITUDE",
+							"LONGITUDE": "LONGITUDE"
+						}
+					}
 				},
 				"inputs": [
 					{
