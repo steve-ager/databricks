@@ -44,7 +44,39 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "Notebook1",
+				"type": "DatabricksNotebook",
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"notebookPath": "/dataengineering with databricks/1 Datafactory ETL"
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureDatabricks1",
+					"type": "LinkedServiceReference"
+				}
 			}
-		]
+		],
+		"parameters": {
+			"inputPath": {
+				"type": "string",
+				"defaultValue": "/staged_sink"
+			},
+			"outputPath": {
+				"type": "string",
+				"defaultValue": "/processed_sink"
+			},
+			"filename": {
+				"type": "string",
+				"defaultValue": "Product.csv"
+			}
+		}
 	}
 }
