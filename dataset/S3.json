@@ -1,0 +1,43 @@
+{
+	"name": "S3",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Amazon S3 Source",
+			"type": "LinkedServiceReference"
+		},
+		"type": "AmazonS3Object",
+		"structure": [
+			{
+				"name": "AIRPORT_ID",
+				"type": "String"
+			},
+			{
+				"name": "AIRPORT",
+				"type": "String"
+			},
+			{
+				"name": "DISPLAY_AIRPORT_NAME",
+				"type": "String"
+			},
+			{
+				"name": "LATITUDE",
+				"type": "String"
+			},
+			{
+				"name": "LONGITUDE",
+				"type": "String"
+			}
+		],
+		"typeProperties": {
+			"format": {
+				"type": "TextFormat",
+				"columnDelimiter": ",",
+				"rowDelimiter": "",
+				"treatEmptyAsNull": true,
+				"skipLineCount": 0,
+				"firstRowAsHeader": true
+			},
+			"bucketName": "demoact"
+		}
+	}
+}
